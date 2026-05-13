@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-gray-50 text-gray-900 antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+.stat-card {
+  @apply bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300;
+}
+
+.glass {
+  @apply bg-white/80 backdrop-blur-md border border-white/20;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fixed {
+  animation: modal-in 0.2s ease-out;
+}
+
+tbody tr {
+  @apply transition-colors duration-150;
+}
+
+button {
+  @apply transition-all duration-200;
+}
+
+input, select, textarea {
+  @apply transition-all duration-200;
+}
+
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .stat-card {
+    @apply p-3;
+  }
+}
+
+.stage-new { @apply bg-gray-100 text-gray-700; }
+.stage-contacted { @apply bg-blue-100 text-blue-700; }
+.stage-qualified { @apply bg-purple-100 text-purple-700; }
+.stage-proposal { @apply bg-yellow-100 text-yellow-700; }
+.stage-negotiation { @apply bg-orange-100 text-orange-700; }
+.stage-won { @apply bg-green-100 text-green-700; }
+.stage-lost { @apply bg-red-100 text-red-700; }
